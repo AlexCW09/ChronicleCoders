@@ -6,5 +6,5 @@
 import Foundation
 
 func chapterThree() {
-    // Your portion of the story goes here
+    print("Once a kid lost his parents, he became batman")
 }
