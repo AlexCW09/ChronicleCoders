@@ -7,6 +7,31 @@ import Foundation
 import SwiftUI
 
 func chapterOne() {
-    // Your portion of the story goes here
-    print("Once upon a time there was a young prince that was the next heir to his fathers throne.")
+    // Creating variables and constants for people/decisions in the story
+    //Taking user's name as an input
+    var userName = ""
+    print("Enter your name: ")
+    if let user = readLine() {
+        print("Hello, \(user)!")
+        userName = user
+    } else {
+        print("Invalid input")
+    }
+    print(userName)
+    
+    //Taking user's gender
+//    print("Enter male, female or non-binary: ")
+//    if var gender = readLine() {
+//    } else {
+//        
+//    }
+    
+    
+   
+    
+    
+    
+    
+    
+    
 }
