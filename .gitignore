@@ -1,0 +1,11 @@
+*.xcuserstate
+
+# Exclude Xcode user interface state file
+UserInterfaceState.xcuserstate
+
+# Exclude Xcode build directory
+build/
+
+
+# Exclude .DS_Store
+.DS_Store
