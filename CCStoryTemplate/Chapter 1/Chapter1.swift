@@ -36,6 +36,15 @@ func stayInOrLeaveRoom() -> Bool {
         else if userDecision == "n" {
             stayInBed  = false
         }
+        else {
+            print("Invalid input")
+        }
+    }
+    if stayInBed {
+        print("")
+    }
+    else {
+        print()
     }
     return stayInBed
 }
