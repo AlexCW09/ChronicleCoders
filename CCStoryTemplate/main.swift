@@ -43,7 +43,10 @@ while(choice){
         } else if (gender == "female") {
             gender = "rincess"
             choice.toggle()
-        } else {
+        } else if(gender == "nonbinary"){
+            gender = "erson"
+            choice.toggle()
+        }else {
             print("Invalid input!")
         }
     }
@@ -58,6 +61,7 @@ func readStory() {
     chapterFive()
 //    chapterSix()
 //    chapterSeven()
+
 }
 
 readStory()
