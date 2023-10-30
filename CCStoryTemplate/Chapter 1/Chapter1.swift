@@ -23,7 +23,7 @@ func introToStory() {
     
     for sentence in intro {
         print(sentence)
-        sleep(1)
+        sleep(2)
     }
 
 
