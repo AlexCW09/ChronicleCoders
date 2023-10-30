@@ -38,13 +38,10 @@ while(choice){
     if let gend = readLine() {
         gender = gend
         if (gender == "male") {
-            gender = "prince"
+            gender = "rince"
             choice.toggle()
         } else if (gender == "female") {
-            gender = "princess"
-            choice.toggle()
-        } else if (gender == "nonbinary") {
-            gender = name
+            gender = "rincess"
             choice.toggle()
         } else {
             print("Invalid input!")
@@ -59,8 +56,8 @@ func readStory() {
     chapterThree()
     chapterFour()
     chapterFive()
-    chapterSix()
-    chapterSeven()
+//    chapterSix()
+//    chapterSeven()
 }
 
 readStory()
