@@ -20,7 +20,7 @@ func introToStory() {
     
     for sentence in intro {
         print(sentence)
-        sleep(8)
+        //sleep(8)
     }
 }
 
@@ -50,7 +50,7 @@ func decision() {
         let leaveBed = ["\nP\(gender) \(name) decided to go to the library to get more reading in, driven by an insatiable curiosity. The moonlight painted a silver path on the castle floors, guiding (name) through the labyrinthine corridors. As they walked towards the library, a peculiar sound piqued their interest.\n", "Upon reaching the source of the noise, \(name) found themselves in a dimly lit hallway, shadows dancing in the corners. A group of castle guards stood, huddled and speaking in hushed tones. The conversation was intense, their faces contorted with frustration.\n", "While observing, \(name) noticed something unsettling. One of the guards held a bundle of papers, and as they gesticulated passionately, pages fluttered to the floor. The papers were worn, their edges jagged, and their contents hidden from view. Something about this encounter felt all too familiar, as though they had stumbled upon a piece of the very mystery that had eluded them in the library.\n", "Suddenly, one of the guards glanced in (name)'s direction, their eyes locking onto \(name). Panic surged through (name), and in that instant, \(name) made a swift decision to retreat, turning and fleeing back to their room.\n", "Back within the safety of their chamber, P\(gender) \(name) found it impossible to sleep. They lay awake, mind racing, questioning what they could have possibly seen. The torn pages, the whispered conversation, and the familiar figure all tugged at the strings of an enigmatic web, and \(name) couldn't help but wonder what secrets they were about to uncover.\n"]
         for sentence in leaveBed {
             print(sentence)
-            sleep(8)
+            //sleep(8)
         }
     }
     else {
@@ -58,7 +58,7 @@ func decision() {
         
         for sentence in stayBed {
             print(sentence)
-            sleep(8)
+            //sleep(8)
         }
     }
 }
