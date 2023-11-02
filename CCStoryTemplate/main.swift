@@ -22,6 +22,8 @@ var stayInBed: Bool = true
 var exploreUpstairs = true
 var doWeKillTheOldMan = true
 var respectServants: Bool = true
+var exploreBaseFloor: Bool = true
+var attackOldMan: Bool = true
 // Chpater 3 Decisions
 var kingAlive: Bool = true
 var momAlive: Bool = true
@@ -34,6 +36,28 @@ var chaseBoy: Bool = true
 
 // Chpater 7 Decisions
 
+//func genChoice(statement: String, choices: [String])->String {
+//    var isValidChoice = false
+//    while !isValidChoice{
+//        print(statement)
+//        if let gend = readLine() {
+//            gender = gend
+//            if(gender==choices[0]){
+//                gender = "rince"
+//                isValidChoice.toggle()
+//            } else if (gender==choices[1]){
+//                gender = "rincess"
+//                isValidChoice.toggle()
+//            } else if (gender==choices[2]){
+//                gender = ""
+//                isValidChoice.toggle()
+//            } else {
+//                print("Invalid Option!")
+//            }
+//        }
+//    }
+//    return gender
+//}
 
 // Taking user's name as an input, changing global variable in main function
 print("Enter your name: ")
@@ -57,7 +81,7 @@ while(choice){
         }
     }
 }
-choice.toggle()
+//choice.toggle()
 
 func readStory() {
     chapterOne()
@@ -65,6 +89,8 @@ func readStory() {
     chapterThree()
     chapterFour()
     chapterFive()
+    //chapterSix()
+    //chapterSeven()
 }
 
 readStory()
