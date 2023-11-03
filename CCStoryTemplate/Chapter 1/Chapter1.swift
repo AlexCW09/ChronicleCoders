@@ -29,7 +29,7 @@ func userDecision(choice: [String]) -> Bool {
 func printSentence(paragraph: [String]) {
     for sentence in paragraph {
         print(sentence)
-        sleep(10)
+        //sleep(10)
     }
 }
 
