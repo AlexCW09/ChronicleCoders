@@ -31,18 +31,19 @@ func chapterTwo()
 {
     let story = Chapter2Story()
 //    Loop until user is ready to read the 2nd chapter
-    while(notProceedToChapter2){
-        print("Chapter 2 proceed? (y/n)")
-        if let userDecision = readLine(){
-            if userDecision == "y" {
-                notProceedToChapter2.toggle()
-            } else if userDecision == "n" {
-                print("Read at a your leisure.")
-            } else {
-                print("Invalid input")
-            }
-        }
-    }
+//    while(notProceedToChapter2){
+//        print("Chapter 2 proceed? (y/n)")
+//        if let userDecision = readLine(){
+//            if userDecision == "y" {
+//                notProceedToChapter2.toggle()
+//            } else if userDecision == "n" {
+//                print("Read at a your leisure.")
+//            } else {
+//                print("Invalid input")
+//            }
+//        }
+//    }
+    nextChapter(chNum: 2)
     showStory(story: story.intro)
     exploreUpstairs = Choice(choices: ["1","2"])
     if exploreUpstairs {
