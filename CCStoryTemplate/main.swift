@@ -44,10 +44,10 @@ while(choice){
     if let gend = readLine() {
         let gender = gend
         if (gender == "1") {
-            mainCharacter.gender = ["prince","Prince"]
+            mainCharacter.gender = ["prince ","Prince "]
             choice.toggle()
         } else if (gender == "2") {
-            mainCharacter.gender = ["princess","Princess"]
+            mainCharacter.gender = ["princess ","Princess "]
             choice.toggle()
         } else if (gender == "3") {
             mainCharacter.gender = ["",""]
