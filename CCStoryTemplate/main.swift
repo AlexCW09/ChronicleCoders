@@ -37,7 +37,6 @@ print("Enter your name: ")
 if let user = readLine() {
     mainCharacter.name = user
 }
-
 // Recieves gender from user and assigns prince, princess or defaults to their name
 while(choice){
     print("Enter you gender:\n1: male\n2: female\n3: nonbinary")
@@ -57,7 +56,6 @@ while(choice){
         }
     }
 }
-
 func readStory() {
     chapterOne()
     chapterTwo()
@@ -67,5 +65,4 @@ func readStory() {
     //chapterSix()
     //chapterSeven()
 }
-
 readStory()
