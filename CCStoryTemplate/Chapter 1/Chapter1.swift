@@ -1,8 +1,7 @@
-//
-//  Chapter1.swift
-//  CLIStoryTemplate
-//
+
+
 import Foundation
+import SwiftUI
 
 // Next chapter function
 func nextChapter(chNum: Int){
@@ -26,14 +25,16 @@ func Choice(choices: [String])->Bool {
     var storyBool = true
     while !isValidChoice{
         if let userDecision = readLine() {
-            if(userDecision==choices[0]){
+            if userDecision == choice[0] {
                 storyBool = true
-                isValidChoice.toggle()
-            } else if (userDecision==choices[1]){
+                isValidOption.toggle()
+            }
+            else if userDecision == choice[1] {
                 storyBool = false
-                isValidChoice.toggle()
-            } else {
-                print("Invalid Option!")
+                isValidOption.toggle()
+            }
+            else {
+                print("Invalid option!\nTry again!\n")
             }
         }
     }
@@ -57,12 +58,11 @@ struct Chapter1Story {
 }
     
 func chapterOne() {
-    let story = Chapter1Story()
-    showStory(story: story.intro)
-    stayInBed = Choice(choices: ["y","n"])
-    if !stayInBed{
-        showStory(story: story.stayBed)
-    } else {
-        showStory(story: story.leaveBed)
+    printSentence(paragraph: intro)
+    if userDecision(choice: ["y", "n"]) == true {
+        printSentence(paragraph: leaveBed)
+    }
+    else {
+        printSentence(paragraph: stayBed)
     }
 }

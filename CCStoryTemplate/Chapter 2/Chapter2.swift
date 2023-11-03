@@ -3,14 +3,152 @@
 //  CLIStoryTemplate
 //
 import Foundation
+//The parts of chapter 2 that require user input
 var notProceedToChapter2 = true
-//let endOfChapter2 = "The Servants would remember how \(mainCharacter.name) would treat them."
-//var decidingFork = true
-enum Place {
+var concludeChapter2 = true
+var decidingFork = true
+
+enum Place
+{
     case house
     case village
     case kingdom
 }
+
+enum StoryOutline
+{
+    case intro
+    case upstairs
+    case baseFloor
+    case killTheOldMan
+    case apprehendTheOldMan
+    case conclusion
+}
+
+func chapterTwo()
+{
+    //Loop until user is ready to read the 2nd chapter
+    while(notProceedToChapter2)
+    {
+        print("\nChapter 2 proceed? (y/n)")
+        if let userDecision = readLine()
+        {
+            if userDecision == "y"
+            {
+                //Read chapter 2
+                showStory(whereAt(.intro))
+                notProceedToChapter2 = false
+            }
+            else if userDecision == "n"
+            {
+                print("Read at a your leisure.")
+            }
+            else
+            {
+                print("Invalid input")
+            }
+        }
+    }
+    //Chapter 2 1st fork go upstairs or stay on base floor
+    while(exploreUpstairs)
+    {
+        print("\nDo you want to explore upstairs or the base floor? (y for upstairs, n for base floor)")
+        if let userDecision = readLine()
+        {
+            if userDecision == "y"
+            {
+                showStory(whereAt(.upstairs))
+                exploreUpstairs = false
+            }
+            else if userDecision == "n"
+            {
+                showStory(whereAt(.baseFloor))
+                exploreUpstairs = false
+            }
+            else
+            {
+                print("Invalid input")
+            }
+        }
+    }
+    
+    //Chapter 2 2nd fork kill the old manor apprehend him
+    while(doWeKillTheOldMan)
+    {
+        print("\nAs the old man is distracted, \(mainCharacter.name) had to decide whether try to kill the old man or try to apprehend him. (y for kill, n for apprehend)")
+        if let userDecision = readLine()
+        {
+            if userDecision == "y"
+            {
+                showStory(whereAt(.killTheOldMan))
+                doWeKillTheOldMan = false
+            }
+            else if userDecision == "n"
+            {
+                showStory(whereAt(.apprehendTheOldMan))
+                doWeKillTheOldMan = false
+            }
+            else
+            {
+                print("Invalid input")
+            }
+        }
+    }
+    //The exciting conclusion to chapter 2
+    while(concludeChapter2)
+    {
+        print("\nRead the exciting conclusion to chapter 2? (y/n)")
+        if let userDecision = readLine()
+        {
+            if userDecision == "y"
+            {
+                //Read conclusion to chapter 2
+                showStory(whereAt(.conclusion))
+                concludeChapter2 = false
+            }
+            else if userDecision == "n"
+            {
+                print("Read at a your leisure.")
+            }
+            else
+            {
+                print("Invalid input")
+            }
+        }
+    }
+    
+}
+
+func whereAt(_ location: StoryOutline) -> [String]
+{
+    var story: Chapter2Story = Chapter2Story()
+    
+    switch location
+    {
+        case .intro:
+            return story.intro
+        case .upstairs:
+            return story.upstairs
+        case .baseFloor:
+            return story.baseFloor
+        case .killTheOldMan:
+            return story.killTheOldMan
+        case .apprehendTheOldMan:
+            return story.apprehendTheOldMan
+        case .conclusion:
+            return story.conclusion
+    }
+}
+
+func showStory(_ story: [String])
+{
+    for paragraph in story
+    {
+        print(paragraph)
+        //sleep(1)
+    }
+}
+
 struct Chapter2Story
 {
     let intro: [String] = ["Years had passed since \(mainCharacter.name)'s youth, and age had only added to their insatiable curiosity and love for adventure. Every day was a new quest, an opportunity to solve the mysteries of the world. The townsfolk relied on them, beckoning them to undertake daring feats, from vanquishing menacing creatures to reuniting lost souls and restoring crumbling edifices. But one fateful day, a hushed whisper traveled through the village, carried on the wings of the wind, reaching \(mainCharacter.name)'s ears. It was a request unlike any other.\n\n", "The villagers had grown uneasy, their faces etched with concern, as they spoke of an abandoned house nestled on the outskirts of the village. This enigmatic dwelling, shrouded in a centuries-old mystery, had long been a source of whispers and stories told by the fireside. They claimed they could hear eerie noises that reverberated through the stillness of the night, accompanied by an otherworldly glow that emanated from the house's cracked windows.\n\n", "\(mainCharacter.name), never one to shy away from a challenge, accepted the quest with a determined nod. With a heart filled with anticipation and a cloak donned for adventure, they embarked on a path rarely traveled. The tall grass whispered secrets as it rustled beneath their boots, leading the way to the forsaken dwelling. Nature itself seemed to have tried to claim the house, its once proud walls now adorned with creeping vines and a defiant tree growing through its heart.\n\n", "As \(mainCharacter.name) stood before the ancient door, the wood creaked and groaned in protest, as if warning them of the secrets that lay within. They pushed the door open, and a cloud of ages-old dust was unleashed into the air, dancing in the beams of daylight that pierced through the decaying structure. The inside of the house was a desolate tableau of time's relentless march. Shattered remnants of furniture lay strewn about, the remnants of memories long past. The walls were adorned with fractured portraits and faded tapestries, each a fragment of a forgotten era.\n\n", "Despite the eerie stillness, \(mainCharacter.name)'s heart beat with excitement and trepidation. What mysteries were concealed in the shadows? What secrets lay buried in this forsaken place? With every creaking floorboard, they ventured deeper into the abyss, their senses alert, and their quest for truth unwavering.","Do you want to explore upstairs or the base floor?\n1: upstairs\n2: base floor"]
