@@ -1,7 +1,4 @@
 //
-//  Chapter1.swift
-//  CLIStoryTemplate
-//
 
 import Foundation
 import SwiftUI
