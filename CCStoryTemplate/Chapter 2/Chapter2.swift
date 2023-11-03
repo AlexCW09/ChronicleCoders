@@ -21,7 +21,7 @@ enum StoryOutline {
 }
 func whereAt(_ location: StoryOutline) -> [String]
 {
-    var story: Chapter2Story = Chapter2Story()
+    let story: Chapter2Story = Chapter2Story()
     switch location {
         case .intro:
             return story.intro
@@ -55,22 +55,21 @@ struct Chapter2Story {
     let conclusion2: [String] = ["\nTheir servants bore witness to these ever-changing moods, and their memories were etched with the indelible marks of \(mainCharacter.name)'s temper.\n", "The following day, as \(mainCharacter.name) ventured back to the \(Place.village), they were met with a sight that left their heart pounding. The abandoned \(Place.house), a wellspring of enigma and discovery, was no more. It lay in ashes, the remnants of the past reduced to cinders. The fire had devoured the secrets and silenced the mysteries, leaving behind only questions in the wake of its smoldering destruction."]
 }
 func chapterTwo() {
-    let story = Chapter2Story()
     nextChapter(chNum: 2)
-    showStory(story: story.intro)
+    showStory(whereAt(.intro))
     exploreUpstairs = Choice(choices: ["1","2"])
     if exploreUpstairs {
-        showStory(story: story.upstairs)
+        showStory(whereAt(.upstairs))
     } else{
-        showStory(story: story.baseFloor)
+        showStory(whereAt(.baseFloor))
         attackOldMan = Choice(choices: ["1","2"])
         if attackOldMan {
-            showStory(story: story.killTheOldMan)
+            showStory(whereAt(.killTheOldMan))
         } else {
-            showStory(story: story.apprehendTheOldMan)
+            showStory(whereAt(.apprehendTheOldMan))
         }
     }
-    showStory(story: story.conclusion1)
+    showStory(whereAt(.conclusion1))
     respectServants = Choice(choices: ["1","2"])
-    showStory(story: story.conclusion2)
+    showStory(whereAt(.conclusion2))
 }
