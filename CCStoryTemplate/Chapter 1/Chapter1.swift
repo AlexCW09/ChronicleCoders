@@ -1,4 +1,4 @@
-//
+
 
 import Foundation
 import SwiftUI
@@ -24,6 +24,7 @@ func userDecision(choice: [String]) -> Bool {
     }
     return storyBool
 }
+
 
 //sentence by sentence
 func printSentence(paragraph: [String]) {
@@ -52,6 +53,3 @@ func chapterOne() {
         printSentence(paragraph: stayBed)
     }
 }
-
-
-
