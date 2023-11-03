@@ -20,6 +20,7 @@ var gender:String = ""
 var stayInBed: Bool = true
 // Chpater 2 Decisions
 var exploreUpstairs = true
+var doWeKillTheOldMan = true
 var respectServants: Bool = true
 // Chpater 3 Decisions
 var kingAlive: Bool = true
