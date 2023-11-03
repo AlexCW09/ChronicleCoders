@@ -52,10 +52,7 @@ while(choice){
         } else if (gender == "3") {
             mainCharacter.gender = ["",""]
             choice.toggle()
-        } else if(gender == "nonbinary"){
-            gender = "erson"
-            choice.toggle()
-        }else {
+        } else {
             print("Invalid input!")
         }
     }
