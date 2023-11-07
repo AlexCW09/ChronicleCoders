@@ -97,10 +97,17 @@ func whereAt(_ location: StoryOutline) -> [String]
             return story.killTheOldMan
         case .apprehendTheOldMan:
             return story.apprehendTheOldMan
-        case .conclusion1:
-            return story.conclusion1
-        case .conclusion2:
-            return story.conclusion2
+        case .conclusion:
+            return story.conclusion
+    }
+}
+
+func showStory(_ story: [String])
+{
+    for paragraph in story
+    {
+        print(paragraph)
+        //sleep(10)
     }
 }
 
@@ -117,24 +124,4 @@ struct Chapter2Story
     
     let conclusion: [String] = ["Upon returning to the familiarity of their home, \(mainCharacter.name) couldn't contain the exhilaration of the discovery they had made in the abandoned \(Place.house). Eager to share their findings and revelations, they sought an audience with the king, hoping to shed light on the hidden truths of the kingdom's past. In the midst of their passionate discussion, \(mainCharacter.name)'s voice resonated with fervor, but the king's response was far from what they had expected.\n", "The king, dismissing their account as mere delusion, silenced \(mainCharacter.name)'s claims with stern authority. He ordered them never to speak of the matter again, his words cutting deep into \(mainCharacter.name)'s soul. Doubt began to creep into their thoughts, and they questioned their own experiences. The king's refusal to acknowledge the truth left a void in their heart.\n", "\(mainCharacter.name) yearned for more, for a way to bridge the gap between them and the king. They envisioned the king as a fellow adventurer, a mentor who would join them on quests, sharing knowledge and skills, and experiencing the thrill of the unknown together. Yet, each request was met with a resounding rejection, the king persistently declining to participate in the adventures that had shaped \(mainCharacter.name)'s world.\n"]
 }
-func chapterTwo() {
-    nextChapter(chNum: 2)
-    showStory(whereAt(.intro))
-    exploreUpstairs = Choice(["1","2"])
-    if exploreUpstairs {
-        showStory(whereAt(.upstairs))
-        arsenal = "crystal"
-    } else{
-        showStory(whereAt(.baseFloor))
-        attackOldMan = Choice(["1","2"])
-        if attackOldMan {
-            showStory(whereAt(.killTheOldMan))
-        } else {
-            showStory(whereAt(.apprehendTheOldMan))
-        }
-        arsenal = "shield"
-    }
-    showStory(whereAt(.conclusion1))
-    respectServants = Choice(["1","2"])
-    showStory(whereAt(.conclusion2))
-}
+
