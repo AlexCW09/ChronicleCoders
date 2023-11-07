@@ -16,7 +16,7 @@ var mainCharacter = Character(name: "", gender: [""])
 var stayInBed: Bool = true
 // Chpater 2 Decisions
 //var exploreBaseFloor: Bool = true
-var exploreUpstairs = true
+//var exploreUpstairs = true
 //var doWeKillTheOldMan = true
 var attackOldMan: Bool = true
 var respectServants: Bool = true
