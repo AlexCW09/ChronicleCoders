@@ -1,7 +1,7 @@
-
-
 import Foundation
 import SwiftUI
+
+
 //enum for emotions in story
 enum emotions {
     case sad
@@ -59,13 +59,13 @@ func userDecision(choice: [String]) -> Bool {
     var storyBool = false
     while !isValidOption {
         if let userDecision = readLine() {
-            if userDecision == choice[0] {
+            if userDecision == choices[0] {
                 storyBool = true
-                isValidOption.toggle()
+                isValidChoice.toggle()
             }
-            else if userDecision == choice[1] {
+            else if userDecision == choices[1] {
                 storyBool = false
-                isValidOption.toggle()
+                isValidChoice.toggle()
             }
             else {
                 print("Invalid option!\nTry again!\n")
@@ -74,11 +74,9 @@ func userDecision(choice: [String]) -> Bool {
     }
     return storyBool
 }
-
-
-//sentence by sentence
-func printSentence(paragraph: [String]) {
-    for sentence in paragraph {
+// Function to print story with time delay
+func showStory(_ story: [String]) {
+    for sentence in story {
         print(sentence)
         //sleep(10)
     }

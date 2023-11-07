@@ -6,11 +6,24 @@ import Foundation
 struct Character {
     var name: String
     var gender: [String]
+    func pStatusTitle()->String{
+        guard let checkKing = kingDead else{
+            return "father"
+        }
+        return "mother"
+    }
+    func parentalStatus()->String{
+        guard let checkKing = kingDead else{
+            return "King"
+        }
+        return "Queen"
+    }
 }
 // Creating variables and constants for people/decisions in the story
 var choice: Bool = true
 // User Info
 var mainCharacter = Character(name: "", gender: [""])
+var arsenal: String = ""
 // Story Decisions
 // Chapter 1 Decisions
 var stayInBed: Bool = true
@@ -21,23 +34,19 @@ var stayInBed: Bool = true
 var attackOldMan: Bool = true
 var respectServants: Bool = true
 // Chpater 3 Decisions
-var kingAlive: Bool = true
+var kingStays: Bool = true
+var kingDead: Bool?
+var kingHealed: Bool = true
 var momAlive: Bool = true
-// Chpater 4 Decisions
 var tellTruth: Bool = true
 var chaseBoy: Bool = true
-// Chpater 5 Decisions
-
-// Chpater 6 Decisions
-
-// Chpater 7 Decisions
+// Chpater 4 Decisions
 
 // Taking user's name as an input, changing global variable in main function
 print("Enter your name: ")
 if let user = readLine() {
     mainCharacter.name = user
 }
-
 // Recieves gender from user and assigns prince, princess or defaults to their name
 while(choice){
     print("Enter you gender:\n1: male\n2: female\n3: nonbinary")
@@ -57,7 +66,6 @@ while(choice){
         }
     }
 }
-
 func readStory() {
     chapterOne()
     chapterTwo()
@@ -68,5 +76,4 @@ func readStory() {
 //    chapterSeven()
 
 }
-
 readStory()
