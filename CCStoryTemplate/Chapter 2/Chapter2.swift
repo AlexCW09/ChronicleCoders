@@ -21,8 +21,7 @@ enum StoryOutline {
     case baseFloor
     case killTheOldMan
     case apprehendTheOldMan
-    case conclusion1
-    case conclusion2
+    case conclusion
 }
 
 func chapterTwo()
@@ -52,7 +51,7 @@ func chapterTwo()
     
     //Chapter 2 1st fork go upstairs or stay on base floor
     print("\nDo you want to explore upstairs or the base floor? (Enter 1 or 2) \n1. Upstairs \n2. Base Floor")
-    if (userDecision(choice: ["1", "2"]) == true)
+    if (userDecision(choices: ["1", "2"]) == true)
     {
         showStory(whereAt(.upstairs))
     }
@@ -63,7 +62,7 @@ func chapterTwo()
     
     //Chapter 2 2nd fork kill the old manor apprehend him
     print("\nAs the old man is distracted, \(mainCharacter.name) had to decide whether try to kill the old man or try to apprehend him. Enter(1 or 2) \n1. Kill the old man. \n2. Apprehend the old man.")
-    if (userDecision(choice: ["1", "2"]) == true)
+    if (userDecision(choices: ["1", "2"]) == true)
     {
         showStory(whereAt(.killTheOldMan))
     }
@@ -74,7 +73,7 @@ func chapterTwo()
     
     //The exciting conclusion to chapter 2
     print("\nRead the exciting conclusion to chapter 2? (y for yes, n for no)")
-    if (userDecision(choice: ["y", "n"]) == true)
+    if (userDecision(choices: ["y", "n"]) == true)
     {
         showStory(whereAt(.conclusion))
     }

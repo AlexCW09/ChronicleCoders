@@ -3,6 +3,42 @@
 //  CLIStoryTemplate
 //
 import Foundation
+//Next chapter function
+func nextChapter(chNum: Int){
+    var isValidChoice = false
+    while !isValidChoice{
+        print("Chapter \(chNum) proceed? (y/n)")
+        if let userDecision = readLine(){
+            if userDecision == "y" {
+                isValidChoice.toggle()
+            } else if userDecision == "n" {
+                print("Read at a your leisure.")
+            } else {
+                print("Invalid input")
+            }
+        }
+    }
+}
+func Choice(_ choices: [String])->Bool {
+    var isValidChoice = false
+    var storyBool = true
+    while !isValidChoice{
+        if let userDecision = readLine() {
+            if userDecision == choices[0] {
+                storyBool = true
+                isValidChoice.toggle()
+            }
+            else if userDecision == choices[1] {
+                storyBool = false
+                isValidChoice.toggle()
+            }
+            else {
+                print("Invalid option!\nTry again!\n")
+            }
+        }
+    }
+    return storyBool
+}
 func Choice(_ statement: String,_ choices: [String])->Bool {
     print(statement)
     var isValidChoice = false
