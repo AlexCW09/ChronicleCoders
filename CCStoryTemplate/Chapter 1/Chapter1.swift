@@ -30,7 +30,14 @@ func characterEmotion(emotion: emotions) -> [String] {
         return ["frustration"]
     }
 }
-
+func printName(_ name: String?) {
+    guard let unwrappedName = name else {
+        print("Hello, young reader! ")
+        return
+    }
+    
+    print("Hello \(unwrappedName)!")
+}
 
 
 
@@ -78,6 +85,7 @@ func printSentence(paragraph: [String]) {
 }
 //calling everything
 func chapterOne() {
+    printName(mainCharacter.name)
     let story = Chapter1Story()
     printSentence(paragraph: story.intro)
     if userDecision(choice: ["y", "n"]) == true {
