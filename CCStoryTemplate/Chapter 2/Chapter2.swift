@@ -5,8 +5,6 @@
 import Foundation
 //The parts of chapter 2 that require user input
 var notProceedToChapter2 = true
-//var concludeChapter2 = true
-//var decidingFork = true
 
 enum Place
 {
