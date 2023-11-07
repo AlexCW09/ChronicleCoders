@@ -1,13 +1,10 @@
-
-
 import Foundation
 import SwiftUI
-
 // Next chapter function
 func nextChapter(chNum: Int){
     var isValidChoice = false
     while !isValidChoice{
-        print("Chapter 2 proceed? (y/n)")
+        print("Chapter \(chNum) proceed? (y/n)")
         if let userDecision = readLine(){
             if userDecision == "y" {
                 isValidChoice.toggle()
@@ -20,7 +17,7 @@ func nextChapter(chNum: Int){
     }
 }
 // Function for options
-func Choice(choices: [String])->Bool {
+func Choice(_ choices: [String])->Bool {
     var isValidChoice = false
     var storyBool = true
     while !isValidChoice{
@@ -41,7 +38,7 @@ func Choice(choices: [String])->Bool {
     return storyBool
 }
 // Function to print story with time delay
-func showStory(story: [String]) {
+func showStory(_ story: [String]) {
     for sentence in story {
         print(sentence)
         sleep(0)
@@ -55,11 +52,11 @@ struct Chapter1Story {
 }
 func chapterOne() {
     let story = Chapter1Story()
-    showStory(story: story.intro)
-        stayInBed = Choice(choices: ["y","n"])
+    showStory(story.intro)
+        stayInBed = Choice(["y","n"])
         if !stayInBed{
-            showStory(story: story.stayBed)
+            showStory(story.stayBed)
         } else {
-            showStory(story: story.leaveBed)
+            showStory(story.leaveBed)
         }
 }
