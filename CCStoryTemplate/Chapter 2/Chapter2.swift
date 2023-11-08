@@ -7,6 +7,7 @@ import Foundation
 var notProceedToChapter2 = true
 let dayOfTheWeek: [String] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 let day = dayOfTheWeek.randomElement() ?? "Sunday"
+let story: Chapter2Story = Chapter2Story()
 
 enum Place
 {
@@ -81,7 +82,7 @@ func chapterTwo()
 
 func whereAt(_ location: StoryOutline) -> [String]
 {
-    let story: Chapter2Story = Chapter2Story()
+    //let story: Chapter2Story = Chapter2Story()
     
     switch location
     {
@@ -97,15 +98,6 @@ func whereAt(_ location: StoryOutline) -> [String]
             return story.apprehendTheOldMan
         case .conclusion:
             return story.conclusion
-    }
-}
-
-func showStory(_ story: [String])
-{
-    for paragraph in story
-    {
-        print(paragraph)
-        //sleep(10)
     }
 }
 

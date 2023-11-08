@@ -66,6 +66,36 @@ while(choice){
         }
     }
 }
+func userDecision(choices: [String]) -> Bool {
+    var isValidChoice = false
+    var storyBool = false
+    while !isValidChoice {
+        if let userDecision = readLine() {
+            if userDecision == choices[0] {
+                storyBool = true
+                isValidChoice.toggle()
+            }
+            else if userDecision == choices[1] {
+                storyBool = false
+                isValidChoice.toggle()
+            }
+            else {
+                print("Invalid option!\nTry again!\n")
+            }
+        }
+    }
+    return storyBool
+}
+
+func showStory(_ story: [String])
+{
+    for paragraph in story
+    {
+        print(paragraph)
+        //sleep(10)
+    }
+}
+
 func readStory() {
     chapterOne()
     chapterTwo()

@@ -53,44 +53,17 @@ struct Chapter1Story {
 }
 
 
-//user decision
-func userDecision(choices: [String]) -> Bool {
-    var isValidChoice = false
-    var storyBool = false
-    while !isValidChoice {
-        if let userDecision = readLine() {
-            if userDecision == choices[0] {
-                storyBool = true
-                isValidChoice.toggle()
-            }
-            else if userDecision == choices[1] {
-                storyBool = false
-                isValidChoice.toggle()
-            }
-            else {
-                print("Invalid option!\nTry again!\n")
-            }
-        }
-    }
-    return storyBool
-}
-// Function to print story with time delay
-func printSentence(_ story: [String]) {
-    for sentence in story {
-        print(sentence)
-        //sleep(10)
-    }
-}
+
 //calling everything
 func chapterOne() {
     printName(mainCharacter.name)
     let story = Chapter1Story()
-    printSentence(story.intro)
+    showStory(story.intro)
     if userDecision(choices: ["y", "n"]) == true {
-        printSentence(story.leaveBed)
+        showStory(story.leaveBed)
     }
     else {
-        printSentence(story.stayBed)
+        showStory(story.stayBed)
     }
 }
 
