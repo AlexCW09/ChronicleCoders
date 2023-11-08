@@ -5,35 +5,161 @@
 
 import Foundation
 
-struct Chapter4Part1Story {
-    let intro: [String] = [""]
+func respectTheServants()->Bool{
+    let x = Int.random(in: 1...2)
+    switch x{
+    case 1:
+        return true
+    default:
+        return false
+    }
 }
-struct Chapter4Part2Story {
-    let intro: [String] = [""]
+
+struct Villians{
+    var auraColor: String
 }
-struct Chapter3Part1StoryDW {
-    let intro: [String] = ["The sun hung low in the sky, casting long shadows as \(mainCharacter.name) made their way to the kingdom's headquarters, summoned by the formidable figure of King, \(mainCharacter.name)'s father. Tension hung in the air, and as \(mainCharacter.name) entered the grand chamber, they couldn't help but feel the intensity of the moment.","Seated on a grand throne, the king gazed at \(mainCharacter.name) with a mixture of concern and resolve. With a commanding voice, he declared, \(mainCharacter.name), you shall embark on a quest to slay a dangerous magic user in a nearby village.","\(mainCharacter.name)'s heart raced at the thought of this perilous task, but an undercurrent of excitement surged through them. They had never encountered a magic user before, and the prospect of such a journey filled them with a unique kind of anticipation. The king leaned forward and posed a question, \"Do you want my company on this mission? It would be our first adventure together, and I would be honored to be by your side.\"","Do you want the king to accompany you?\n1. King comes\n2. King stay"]
-    let declinesKing: [String] = ["They nodded with determination, feeling a sense of responsibility to protect their father. As they and the others set out of the kingdom, villagers watched in curiosity, wondering why so many guards were leaving. Upon arriving at the village, the local leader confronted them, perplexed by the presence of guards and \(mainCharacter.name). It was only after a tense exchange that \(mainCharacter.name) explained the purpose of their visit, citing an alert about a magic user. The leader's disbelief quickly turned into hesitation, and he refused to comply with \(mainCharacter.name)'s request to gather the villagers for a magic test.","\(mainCharacter.name), taking a more serious tone, placed a hand on their sword, pushing the leader to react defensively. He unsheathed his own blade, igniting a feud between the kingdom's people and the villagers. \(mainCharacter.name), their sword in hand, lunged at the leader, meeting unexpected resistance. Yet, in the end, \(mainCharacter.name) emerged victorious.","The aftermath was grim. \(mainCharacter.name) explored the ruined village, searching for the elusive magic user until they came upon a house. Inside, a frightened boy cried for his parents' return. Y/N cautiously approached the child, their sword at the ready, but hesitated. As they stood at an impasse, a woman suddenly emerged from behind, attempting to strike \(mainCharacter.name).","Do you want to attack the women or disarm her?\n1. Attack her\n2. Disarm her"]
-    let stabsMom: [String] = ["The boy's cries for his lifeless mother pierced the air, and \(mainCharacter.name) realized the tragedy they had caused before the boy's eyes. As \(mainCharacter.name) continued their quest to locate the magic user, the boy glared at them with burning rage, his innocent eyes turning into malevolent, glowing red orbs. The village was left in chaos, with casualties on both sides."]
-    let knocksOutMom: [String] = ["The boy's tears for his unconscious mother echoed through the room, and Y/N comprehended the gravity of their actions in front of the child. As \(mainCharacter.name) left to search for the elusive magic user, the boy watched them with a mix of anger and sorrow, his eyes shifting from glowing blue to a deep, ominous red. The village lay in ruins, with casualties on both sides."]
-    let acceptsKing: [String] = ["As they set out from the kingdom alongside the king and their entourage, villagers watched with wide eyes, baffled by the unusual sight of their king leaving his domain. The village leader's shock was palpable as the king approached.","Following the same sequence of events, \(mainCharacter.name) and the king confronted the villagers about the magic user, which ultimately led to a feud between the kingdom's people and the villagers. The king's swift and decisive actions left no doubt about his prowess. As they explored the destroyed village, they stumbled upon a house, where a frightened boy cried for his parents.","This time, a dramatic turn of events unfolded as the king raised his sword against the boy. \(mainCharacter.name) shouted a desperate \"DAD!\" just in time to distract their father. The woman attempted and stabbed the king in the back. \(mainCharacter.name) intervened by slashing the woman, but not quick enough to save their father. As the king lay on the ground, dying, he implored \(mainCharacter.name) to stay strong and eliminate the magic user, then fell unconscious."]
-    let noCrystal: [String] = ["They wept as the King, their father, passed away before their eyes. The boy, too, cried as he held his dying mother. \(mainCharacter.name) raised their sword, but the boy's gaze held them back. As \(mainCharacter.name) departed in search of the unknown magic user, the boy watched them leave, his eyes shifting from blue to an ominous red glow. The village lay in ruins, with casualties on both sides."]
-    let letKingDie: [String] = ["\(mainCharacter.name) decided not to heal their father, fearing the consequences of using magic and not wanting to reveal their secrets to him. They wept as the King, their father, passed away before their eyes. The boy, too, cried as he held his dying mother. \(mainCharacter.name) raised their sword, but the boy's gaze held them back. As \(mainCharacter.name) departed in search of the unknown magic user, the boy watched them leave, his eyes shifting from blue to an ominous red glow. The village lay in ruins, with casualties on both sides."]
-    let healKing: [String] = ["\(mainCharacter.name) chose to extract the crystal to heal their father. Witnessing this, the boy pleaded for his mother's life as well. Ignoring the boy's pleas, \(mainCharacter.name) carried their father out. The boy watched them leave with a mixture of anger and betrayal, his eyes shifting from blue to a malevolent red glow. The village was left in ruins, with casualties on both sides."]
+let Villian1Color = Villians(auraColor: printColor(randomColor()))
+let Villian2Color = Villians(auraColor: printColor(randomColor()))
+let Villian3Color = Villians(auraColor: printColor(randomColor()))
+let Villian4Color = Villians(auraColor: printColor(.red))
+func randomColor()->mageAuraColor{
+    let x = Int.random(in: 1...6)
+    switch x{
+        case 1:
+            return .cyan
+        case 2:
+            return .yellow
+        case 3:
+            return .green
+        case 4:
+            return .blue
+        case 5:
+            return .purple
+        default:
+            return .white
+    }
 }
-struct Chapter3Part2StoryDW {
-    let kingStayedIntro: [String] = ["\(mainCharacter.name) returned to the kingdom with fewer men, the weight of their recent failure evident in the expressions of the people. The kingdom, accustomed to success, was in turmoil, and panic spread like wildfire. \(mainCharacter.name), burdened by guilt, headed to debrief the king about the ill-fated village mission. In a calculated move, they decided to withhold the truth, either not identifying the magic user or concocting a story of the magic user's elimination.","The king, suspecting the deceit but having no evidence, took a stern stance. He stripped \(mainCharacter.name) of their right to adventure and leave the castle, fearing their actions would only cause more harm."]
-    let kingDiedIntro: [String] = ["\(mainCharacter.name) returned with fewer men and the kingdom in chaos. The absence of the king added to the kingdom's distress. \(mainCharacter.name), with a heavy heart, met with the tearful queen to recount the events of the village mission. Similar to the previous scenario, they chose to deceive, omitting any mention of the magic user's true identity or falsely claiming to have eliminated them.","The grieving \(mainCharacter.parentalStatus()), aware of \(mainCharacter.name)'s deception, made a tough decision. She revoked \(mainCharacter.name)'s right to adventure and leave the castle, convinced that their actions had caused enough harm, not just to the kingdom but also to her late husband."]
-    let kingHealIntro: [String] = ["\(mainCharacter.name) and the king returned to the kingdom with fewer men, their arrival sparking rumors and panic. Once again, \(mainCharacter.name) and the king chose to conceal the truth, obscuring the identity of the magic user or fabricating a story about their defeat. However, something unexpected occurred.","The king, noticing the miraculous healing of \(mainCharacter.name)'s wounds, demanded an explanation. Hesitantly, \(mainCharacter.name) produced the crystal, revealing it to the king and queen. The king's reaction was immediate, and he shattered the crystal, expressing anger and reminding \(mainCharacter.name) about the dangers of magic. \(mainCharacter.name), despite the king's fury, attempted to defend the idea that magic could be harnessed for good, but the king was unyielding. He stripped \(mainCharacter.name) of the right to leave the castle. In an attempt to reconcile with the village they had ruined, the \(mainCharacter.parentalStatus()) organized a group funeral. The kingdom's populace turned out in force for the event.","Amid the ceremony, \(mainCharacter.name) felt the weight of the people's judgment. They were called a failure, a monster, and unworthy of the throne, but before they could defend themselves, the queen silenced them, asserting they had caused enough trouble. Y/N stood near the back, avoiding confrontation and reflecting on the gravity of their actions.","In the midst of the service, \(mainCharacter.name) sensed a pair of eyes fixed upon them and realized it was the lone boy from the destroyed village, his eyes glowing ominously."]
-    let kingArgue: [String] = ["Furious and frustrated, \(mainCharacter.name) argued with the \(mainCharacter.parentalStatus()), but their pleas fell on deaf ears. The king's decision remained final, and they were forbidden from leaving the castle. In an attempt to make amends for the destruction in the village, the king organized a group funeral, which attracted most of the kingdom's residents.","During the somber ceremony, \(mainCharacter.name) felt the weight of the people's judgment, who called them a failure, a monster, and unworthy of the throne. As they tried to defend themselves, the king silenced them, claiming that they had caused enough trouble. \(mainCharacter.name) stood at the back of the crowd, seeking to avoid further confrontation. In the midst of the service, \(mainCharacter.name) sensed someone's gaze fixed upon them and discovered the lone boy from the village they had destroyed, staring with glowing eyes."]
-    let queenArgue: [String] = ["\(mainCharacter.name), unable to sway the \(mainCharacter.parentalStatus()), remained forbidden from leaving the castle. In an attempt to reconcile with the village they had ruined and honor the late king, the \(mainCharacter.parentalStatus()) organized a group funeral. The kingdom's populace turned out in force for the event.","Amid the ceremony, \(mainCharacter.name) felt the weight of the people's judgment. They were called a failure, a monster, and unworthy of the throne, but before they could defend themselves, the queen silenced them, asserting they had caused enough trouble. Y/N stood near the back, avoiding confrontation and reflecting on the gravity of their actions.","In the midst of the service, \(mainCharacter.name) sensed a pair of eyes fixed upon them and realized it was the lone boy from the destroyed village, his eyes glowing ominously."]
-    let chaseBoy: [String] = ["\(mainCharacter.name), driven by curiosity and apprehension, pushed through the crowd to reach the boy, but the moment they closed in, the boy vanished into thin air. Y/N's actions caused a scene, and the already disappointed \(mainCharacter.parentalStatus()) sighed in resignation. He requested \(mainCharacter.name) to leave the ceremony, an order they reluctantly obeyed."]
-    let letBoyGo: [String] = ["\(mainCharacter.name) hesitated as the boy's hands erupted in flames, igniting panic among the mourners. Chaos ensued as people scrambled to escape the fire. Overwhelmed by the crowd, \(mainCharacter.name) stood still, watching the devastating consequences of their actions and the unfolding tragedy."]
+enum mageAuraColor: String{
+    case red
+    case cyan
+    case yellow
+    case green
+    case blue
+    case purple
+    case white
 }
-struct Chapter4Part3Story {
-    let ending1: [String] = ["As the first rays of dawn broke through the horizon, a sense of quiet settled around the campfire. The young boy, his curiosity piqued, couldn't help but wonder aloud, \"That's it? There's no more about the prince/princess Y/N?\"","The mysterious person, cloaked in the warmth of the fire's glow, sighed softly. \"After that, no one knows about or the location of Y/N,\" they replied cryptically, their focus on extinguishing the remaining embers.","\"Darn, wish I could meet them,\" the kid lamented, a twinge of disappointment in his voice.","The mysterious figure rose slowly, the morning light revealing their tired and weathered appearance, which bore an uncanny resemblance to the description of Y/N. The kid's eyes widened in surprise.","The boy began to ask, \"Are you...?\" before the mystery person gently cut him off, saying, \"Thanks for the meal, kid. You should head home soon; your parents must be worried sick.\"","\"Sure thing,\" the kid responded, lowering his head momentarily before looking up again at the enigmatic figure. He couldn't resist the urge to inquire further. \"So, where are you going to go? Can you teach me how to use a sword?\" He held onto a glimmer of hope that this person could teach him to be as strong as they seemed.","The mystery person hesitated for a moment, then admitted they were on a mission to atone for past mistakes. With that revelation, the boy watched in silence as the mysterious figure began to walk away into the distance, leaving behind the warmth of the fire and a sense of intrigue."]
-    let ending2: [String] = ["The crackling of the fire grew more intense as a piece of wood was thrown into it, causing the flames to leap higher and more erratically. The young boy, not entirely satisfied with the story he had heard, inquired, \"That's it? There's no more about the prince/princess Y/N?\"","The enigmatic figure continued to feed the fire, adding more wood to it, casting eerie flickering shadows across their face. \"After that, no one knows about or the location of Y/N,\" they muttered quietly, their intentions unclear.","\"They sound like they're up to no good,\" the kid murmured, a sense of unease creeping over him.","The mysterious person abruptly rose, blocking the light from the fire, preventing the kid from getting a clear look at their face. The young boy started to ask, \"So, do you have any more stories...\" before he was interrupted by the mystery person.","\"Thanks for the meal, kid. Perhaps you can point me in the direction of your village?\" they said, their voice tinged with an unsettling tone, as they began packing up their belongings.","\"Sure thing, it's to the north that way,\" the boy replied, pointing toward his village. His curiosity unabated, he tried once more. \"So, can you teach me how to use a sword...?\"","The mystery person, growing more distant and aloof, replied that they were on a mission and couldn't be bothered at the moment. The dejected boy watched as the mysterious figure walked away into the shadows.","As the boy gathered more firewood, he heard distant sounds of people running in the direction of his village, suddenly stopping in his tracks. Intrigued, he left the fire and headed back in that direction. As he raised his head, he heard the chilling sounds of screaming, now unmistakably coming from his village. In utter shock, he dropped the firewood and ran towards the village, views of smoke billowing from the rooftops as he approached his village. Friends and family becoming the sources of the horrifying screams. In the distance, he spotted the enigmatic figure that told him the story and shared a meal with him, standing in the midst of the chaos, the sole cause of his village's destruction"]
+func printColor(_ color: mageAuraColor)-> String {
+    switch color{
+        case .red:
+            return "Red"
+        case .cyan:
+            return "Cyan"
+        case .yellow:
+            return "Yellow"
+        case .green:
+            return "Green"
+        case .blue:
+            return "Blue"
+        case .purple:
+            return "Purple"
+        case .white:
+            return "White"
+    }
+}
+func generateStoryElements(_ piece : [String]) -> [String] {
+    return piece
+}
+func generateStoryElements(_ piece : String) -> String {
+    return piece
+}
+func nextChapter(chNum: Int){
+    var isValidChoice = false
+    while !isValidChoice{
+        print("Chapter \(chNum) proceed? (y/n)")
+        if let userDecision = readLine(){
+            if userDecision == "y" {
+                isValidChoice.toggle()
+            } else if userDecision == "n" {
+                print("Read at a your leisure.")
+            } else {
+                print("Invalid input")
+            }
+        }
+    }
+}
+// Function for options
+func Choice(_ statement: String,_ choices: [String])->Bool {
+    print(statement)
+    var isValidChoice = false
+    var storyBool = true
+    while !isValidChoice{
+        if let userDecision = readLine() {
+            if userDecision == choices[0] {
+                storyBool = true
+                isValidChoice.toggle()
+            }
+            else if userDecision == choices[1] {
+                storyBool = false
+                isValidChoice.toggle()
+            }
+            else {
+                print("Invalid option!\nTry again!\n")
+            }
+        }
+    }
+    return storyBool
+}
+struct Chapter4Story {
+    let intro: [String] = ["Weeks passed, and \(mainCharacter.name) found themselves dwelling in the confines of the castle, their anger towards their parents festering. The banishment from quests continued to gnaw at them. Boredom became their relentless companion, and they sought refuge in exploration.","One day, driven by a desire to uncover secrets, they decided to visit the castle's library. The dimly lit room held countless books, but as a child, \(mainCharacter.name) had noticed that some of them were missing pages. They had never forgotten that peculiar detail, and now, that curiosity propelled them.","As they stepped into the library, their eyes fell upon the rows of books, but the sight that met them was disheartening. Every book in the library had been vandalized, pages torn out, and knowledge erased. A memory resurfaced, the remnants of a burned building they had explored after confiding in their \(mainCharacter.pStatusTitle()). A disturbing thought took hold the \(mainCharacter.parentalStatus()) had something to hide.","Their rage burned white-hot, and they no longer cared about the ban on leaving the castle. Instead, they decided to release their anger by battling monsters in the forest, choosing the full moon night for their venturous hunt.","Hours passed as they slew monster after monster, the frigid air revealing their every breath. But just when exhaustion was about to overcome them, a heart-rending scream pierced the silence. \(mainCharacter.name)'s shock and determination to help led them toward the source.","Through snow and trees, blinded by the night, they arrived at the scene of a young boy, flames dancing in his hands as he valiantly defended himself against a horde of monsters. \(mainCharacter.name), always ready to help, hesitated this time due to the boy's use of magic."]
+    let helpBoy:[String] = ["In a heartbeat, \(mainCharacter.name) rushed to the boy's aid, slicing one of the monsters in half. The boy's eyes widened in shock at this sudden intervention, but his expression soon twisted into rage upon recognizing \(mainCharacter.name).","As \(mainCharacter.name) engaged the other monsters, a torrent of flames surged towards them. They dodged the fiery onslaught, but the hood covering their head was singed. Confusion and anger filled their voice as they asked the boy why he was raging when there were monsters all around.","The boy's response hit like a bolt of lightning. He accused the kingdom and its people of being the real monsters, hunting down magic users for their own greed. \(mainCharacter.name) was left reeling by this revelation, and it didn't take long before the monsters and the boy turned on them.","Desperate, \(mainCharacter.name) managed to escape and returned to the castle as the sun began to rise, their perspective forever altered.","Back at the castle, \(mainCharacter.name) couldn't contain their desire to confront the \(mainCharacter.parentalStatus()) about the missing pages and their newfound experience with magic."]
+    let ignoreBoy:[String] = ["\(mainCharacter.name) decided to let the monsters continue their assault on the boy. Struggling against his supernatural foes, the boy caught a glimpse of \(mainCharacter.name) turning away and heading home. However, the monsters suddenly turned their attention to \(mainCharacter.name), their eyes glowing with an eerie, green light. It was clear the boy had control over them, making their movements predictable.","The boy, fueled by a cruel satisfaction, taunted \(mainCharacter.name), asking how it felt to be helpless. Anger welled up within \(mainCharacter.name), and they lashed out, slaying the monsters, but one escaped. Fear overtook the boy, and he clambered onto the remaining creature's back, fleeing the scene.","As the sun began to rise, \(mainCharacter.name) returned to the castle, their heart heavy with the unsettling experience. Driven by a newfound purpose, they confronted the \(mainCharacter.parentalStatus()) about the missing pages and their encounter with magic."]
+    let betrayParent:[String] = ["Enveloped by the raging tempest of their wrath, \(mainCharacter.name) relinquished themselves to the turbulent tide of anger, allowing it to be their merciless muse. In the cruel theatre of fate, their hand became a marionette's stringed appendage, manipulated by the nefarious maestro of fury.","With a malevolent dance, the blade was unleashed, a scythe of retribution. In an ethereal instant, it tore through the veil of the \(mainCharacter.parentalStatus())'s existence, severing the monarch's reign and silencing their imperious voice. The kingdom, thrust into the abyss of chaos, became an aimless ship adrift on the tumultuous sea of fate. \(mainCharacter.name)'s impulsive act had painted the canvas of destiny with a stroke of unrelenting darkness, leaving an indelible mark upon the annals of the kingdom's history."]
+    let calmDown:[String] = ["Amid the turbulent tempest of their rage, \(mainCharacter.name) suddenly found themselves caught in a whirlpool of introspection. The path of violence that had consumed them felt barren and desolate. With a solemn epiphany, they comprehended that the answer did not lie in bloodshed. Violence, they realized, was a door to nowhere.","In that profound moment, \(mainCharacter.name) chose to shatter the vicious cycle that had ensnared them. Instead of rebelling against the \(mainCharacter.parentalStatus())'s criticism as they had so often done, they chose a different path. The embers of their determination flickered anew, as they vowed to illuminate their worthiness through nobler means. The pledge they made was not only to the kingdom but to themselves—a testament to their resilience and their commitment to change the course of their story."]
+    let goodCeremony: [String] = ["Many years passed, and \(mainCharacter.name) proved themselves to be a worthy and just leader. They ascended to the throne, started a family, and the previous \(mainCharacter.parentalStatus()) held a grand celebration that drew most of the village's inhabitants to honor their rule."]
+    let badCeremony:[String] = ["Over the years, \(mainCharacter.name)'s reputation as a troubled and misunderstood ruler lingered. Still, they had a family, a partner, and a child. To celebrate, \(mainCharacter.name) hosted a ceremony, but only a handful of attendees showed up, their reputation casting a shadow over the event."]
+    let kingdomAttacked:[String] = ["The ceremony was well underway when a calamitous explosion erupted from the castle walls, causing panic among the gathered crowd. \(mainCharacter.name), accompanied by their guards, rushed to the scene to confront the unknown threat.","As they approached the breach in the walls, a shocking sight awaited them. 4 Hooded figures, one with a \(Villian1Color.auraColor) aura wielding magic of water, the second with \(Villian2Color.auraColor), and the third with \(Villian3Color.auraColor) all had descended upon the kingdom, attacking its citizens. \(mainCharacter.name) sprang into action, dealing with the intruders one by one, but one of them with a \(Villian4Color.auraColor) proved to be a formidable adversary.","They engaged in a fierce battle that raged on for some time until the hooded figure launched \(mainCharacter.name) into a wall, walking away towards their sinister objective. Though battered and bruised, \(mainCharacter.name) got to their feet and gave chase to the intruder, who was heading toward the castle."]
+    let poison:[String] = ["As they approached the towering castle, an ominous fog of dizziness and fatigue descended upon Y/N, enveloping them like a sinister shroud. The poison, a stealthy assailant, seeped into their very being, its insidious tendrils sapping their vitality. This debilitating toxin cast a heavy veil upon Y/N, their movements lethargic and ponderous, like a hero in the final act of an arduous journey.","By the time Y/N reached the imposing gates of the castle, it was as though they had traversed through the treacherous winds of time itself. The once-vibrant spirit that had fueled their determination now flickered dimly in their chest. Their heart sank as they were met with the haunting tableau of their family's lifeless bodies, a scene so grim that it sent shivers through their very soul.","From the shadowy recesses of the chamber, the hooded figure emerged, a cruel grin dancing upon their lips as they taunted Y/N with chilling words. \"It took you long enough,\" the figure sneered, savoring the pain etched across Y/N's face.","In the midst of their anguish, Y/N struggled to comprehend the hooded man's motives. The tumultuous whirlwind of emotions that had brought them here was met with a cruel twist of fate. The hooded figure unveiled their true identity, shrouded no longer, revealing himself as the boy from the village that Y/N had once shattered, the ghost of their past sins made manifest."]
+    let familyLives:[String] = ["In the crucible of dire circumstances, \(mainCharacter.name)'s nimble wit and dauntless valor became the beacon of salvation for their imperiled family. As the hooded figure teetered on the precipice of malevolence, \(mainCharacter.name)'s decisive intervention offered a reprieve from an impending tragedy.","Time hung suspended in the balance, a fragile tightrope between vengeance and redemption. The hooded man, ensnared in the web of his own emotions, grappled with an internal tempest of indecision. It was a haunting echo of their past transgressions that rippled through his conscience, ultimately nudging him towards the treacherous path of retribution."]
+    let familyDead:[String] = ["As \(mainCharacter.name) arrived at the castle, a heart-wrenching sight awaited them. Their beloved family was held hostage by the hooded figure, who had a firm grip on \(mainCharacter.name)'s partner, ready to extinguish her life with a single move. \(mainCharacter.name) tried to speak with the hooded man, attempting to sympathize with his grievances, but the intruder remained unmoved by their words.","In a cruel and merciless act, the hooded figure ended the lives of \(mainCharacter.name)'s family. Grief and rage surged within \(mainCharacter.name), and their resolve turned to steel as they confronted the hooded figure."]
+    let fight:[String] = ["With fury in their eyes, \(mainCharacter.name) and the intruder engaged in a brutal battle, the surroundings bearing witness to their destructive clash. After a grueling exchange of blows and magic, \(mainCharacter.name) gained the upper hand and brought an end to the hooded man's life. They surveyed the aftermath of the attack, realizing that all the monsters and magic users were either dead or captured."]
+    let goodEnding: [String] = ["As the villagers cheered for \(mainCharacter.name), showing their support and appreciation, an overwhelming sense of unworthiness still loomed over \(mainCharacter.name)'s heart. Despite the celebration, they made the difficult decision to vanish from the kingdom, embarking on a solitary journey to find their own path.","As the first rays of dawn broke through the horizon, a sense of quiet settled around the campfire. The young boy, his curiosity piqued, couldn't help but wonder aloud, \"That's it? There's no more about the prince/princess \(mainCharacter.name)?\"","The mysterious person, cloaked in the warmth of the fire's glow, sighed softly. \"After that, no one knows about or the location of \(mainCharacter.name),\" they replied cryptically, their focus on extinguishing the remaining embers.","\"Darn, wish I could meet them,\" the kid lamented, a twinge of disappointment in his voice.","The mysterious figure rose slowly, the morning light revealing their tired and weathered appearance, which bore an uncanny resemblance to the description of \(mainCharacter.name). The kid's eyes widened in surprise.","The boy began to ask, \"Are you...?\" before the mystery person gently cut him off, saying, \"Thanks for the meal, kid. You should head home soon; your parents must be worried sick.\"","\"Sure thing,\" the kid responded, lowering his head momentarily before looking up again at the enigmatic figure. He couldn't resist the urge to inquire further. \"So, where are you going to go? Can you teach me how to use a sword?\" He held onto a glimmer of hope that this person could teach him to be as strong as they seemed.","The mystery person hesitated for a moment, then admitted they were on a mission to atone for past mistakes. With that revelation, the boy watched in silence as the mysterious figure began to walk away into the distance, leaving behind the warmth of the fire and a sense of intrigue."]
+    let badEnding: [String] = ["The villagers were furious and demanded answers from the King, accusing \(mainCharacter.name) of being unworthy of their leadership. The King, his eyes filled with anger and remorse, acknowledged their previous blindness to the dangers posed by magic users. With newfound determination, the King pledged to make amends by eradicating all forms of magic from the land.","The crackling of the fire grew more intense as a piece of wood was thrown into it, causing the flames to leap higher and more erratically. The young boy, not entirely satisfied with the story he had heard, inquired, \"That's it? There's no more about the prince/princess \(mainCharacter.name)?\"","The enigmatic figure continued to feed the fire, adding more wood to it, casting eerie flickering shadows across their face. \"After that, no one knows about or the location of \(mainCharacter.name),\" they muttered quietly, their intentions unclear.","\"They sound like they're up to no good,\" the kid murmured, a sense of unease creeping over him.","The mysterious person abruptly rose, blocking the light from the fire, preventing the kid from getting a clear look at their face. The young boy started to ask, \"So, do you have any more stories...\" before he was interrupted by the mystery person.","\"Thanks for the meal, kid. Perhaps you can point me in the direction of your village?\" they said, their voice tinged with an unsettling tone, as they began packing up their belongings.","\"Sure thing, it's to the north that way,\" the boy replied, pointing toward his village. His curiosity unabated, he tried once more. \"So, can you teach me how to use a sword...?\"","The mystery person, growing more distant and aloof, replied that they were on a mission and couldn't be bothered at the moment. The dejected boy watched as the mysterious figure walked away into the shadows.","As the boy gathered more firewood, he heard distant sounds of people running in the direction of his village, suddenly stopping in his tracks. Intrigued, he left the fire and headed back in that direction. As he raised his head, he heard the chilling sounds of screaming, now unmistakably coming from his village. In utter shock, he dropped the firewood and ran towards the village, views of smoke billowing from the rooftops as he approached his village. Friends and family becoming the sources of the horrifying screams. In the distance, he spotted the enigmatic figure that told him the story and shared a meal with him, standing in the midst of the chaos, the sole cause of his village's destruction"]
 }
 func chapterFour() {
-
+    let story = Chapter4Story()
+    nextChapter(chNum: 4)
+    showStory(generateStoryElements(story.intro))
+    helpBoy = Choice("Do you want to help the boy?\n1: Help\n2. Do not help", ["1","2"])
+    if helpBoy{
+        showStory(generateStoryElements(story.helpBoy))
+        betrayParent = Choice(generateStoryElements("Do you want to betray the \(mainCharacter.parentalStatus())?\n1: Betray them \n2. Calm down"), ["1","2"])
+        if betrayParent{
+            showStory(generateStoryElements(story.betrayParent))
+            showStory(generateStoryElements(story.badCeremony))
+        } else {
+            showStory(generateStoryElements(story.calmDown))
+            showStory(generateStoryElements(story.goodCeremony))
+        }
+    } else {
+        showStory(generateStoryElements(story.ignoreBoy))
+        showStory(generateStoryElements(story.goodCeremony))
+    }
+    showStory(generateStoryElements(story.kingdomAttacked))
+    respectServants = respectTheServants()
+    if respectServants{
+        if momAlive {
+            showStory(generateStoryElements(story.familyLives))
+        } else {
+            showStory(generateStoryElements(story.familyDead))
+        }
+    } else {
+        showStory(generateStoryElements(story.poison))
+    }
+    showStory(generateStoryElements(story.fight))
+    forgiveMagicUsers = Choice("Do you want to forgive the mages?\n1: Forgive them\n2. Seek Revenge", ["1","2"])
+    if forgiveMagicUsers{
+        showStory(generateStoryElements(story.goodEnding))
+    } else {
+        showStory(generateStoryElements(story.badEnding))
+    }
 }

@@ -7,13 +7,13 @@ struct Character {
     var name: String
     var gender: [String]
     func pStatusTitle()->String{
-        guard let checkKing = kingDead else{
+        guard kingDead != nil else{
             return "father"
         }
         return "mother"
     }
     func parentalStatus()->String{
-        guard let checkKing = kingDead else{
+        guard kingDead != nil else{
             return "King"
         }
         return "Queen"
@@ -41,7 +41,9 @@ var momAlive: Bool = true
 var tellTruth: Bool = true
 var chaseBoy: Bool = true
 // Chpater 4 Decisions
-
+var helpBoy: Bool = true
+var betrayParent: Bool = true
+var forgiveMagicUsers: Bool = true
 // Taking user's name as an input, changing global variable in main function
 print("Enter your name: ")
 if let user = readLine() {
@@ -92,7 +94,7 @@ func showStory(_ story: [String])
     for paragraph in story
     {
         print(paragraph)
-        //sleep(10)
+        sleep(10)
     }
 }
 
@@ -101,9 +103,6 @@ func readStory() {
     chapterTwo()
     chapterThree()
     chapterFour()
-    chapterFive()
-//    chapterSix()
-//    chapterSeven()
 
 }
 readStory()
