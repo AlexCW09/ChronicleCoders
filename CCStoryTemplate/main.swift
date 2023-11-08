@@ -94,7 +94,7 @@ func showStory(_ story: [String])
     for paragraph in story
     {
         print(paragraph)
-        sleep(10)
+        sleep(15)
     }
 }
 
