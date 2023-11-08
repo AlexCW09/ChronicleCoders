@@ -99,6 +99,7 @@ func showStory(_ story: [String])
 }
 
 func readStory() {
+    print("\nPath of fate: tale of \(mainCharacter.name)\n")
     chapterOne()
     chapterTwo()
     chapterThree()
