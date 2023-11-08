@@ -3,67 +3,60 @@
 //  CLIStoryTemplate
 //
 import Foundation
-//Next chapter function
-func nextChapter(chNum: Int){
-    var isValidChoice = false
-    while !isValidChoice{
-        print("Chapter \(chNum) proceed? (y/n)")
-        if let userDecision = readLine(){
-            if userDecision == "y" {
-                isValidChoice.toggle()
-            } else if userDecision == "n" {
-                print("Read at a your leisure.")
-            } else {
-                print("Invalid input")
-            }
-        }
+enum Chapter3StoryOutline {
+    case intro
+    case declinesKing
+    case stabsMom
+    case knocksOutMom
+    case acceptsKings
+    case noCrystal
+    case letKingDie
+    case healKing
+    case kingStayedIntro
+    case kingDiedIntro
+    case kingHealIntro
+    case kingArgue
+    case queenArgue
+    case chaseBoy
+    case letBoyGo
+}
+func whereAtChapter3(_ location: Chapter3StoryOutline) -> [String]
+{
+    let story: Chapter3Story = Chapter3Story()
+    switch location {
+        case .intro:
+            return story.intro
+        case .declinesKing:
+            return story.declinesKing
+        case .stabsMom:
+            return story.stabsMom
+        case .knocksOutMom:
+            return story.knocksOutMom
+        case .acceptsKings:
+            return story.acceptsKing
+        case .noCrystal:
+            return story.noCrystal
+        case .letKingDie:
+            return story.letKingDie
+        case .healKing:
+            return story.healKing
+        case .kingStayedIntro:
+            return story.kingStayedIntro
+        case .kingDiedIntro:
+            return story.kingDiedIntro
+        case .kingHealIntro:
+            return story.kingHealIntro
+        case .kingArgue:
+            return story.kingArgue
+        case .queenArgue:
+            return story.queenArgue
+        case .chaseBoy:
+            return story.chaseBoy
+        case .letBoyGo:
+            return story.letBoyGo
     }
 }
-func Choice(_ choices: [String])->Bool {
-    var isValidChoice = false
-    var storyBool = true
-    while !isValidChoice{
-        if let userDecision = readLine() {
-            if userDecision == choices[0] {
-                storyBool = true
-                isValidChoice.toggle()
-            }
-            else if userDecision == choices[1] {
-                storyBool = false
-                isValidChoice.toggle()
-            }
-            else {
-                print("Invalid option!\nTry again!\n")
-            }
-        }
-    }
-    return storyBool
-}
-func Choice(_ statement: String,_ choices: [String])->Bool {
-    print(statement)
-    var isValidChoice = false
-    var storyBool = true
-    while !isValidChoice{
-        if let userDecision = readLine() {
-            if userDecision == choices[0] {
-                storyBool = true
-                isValidChoice.toggle()
-            }
-            else if userDecision == choices[1] {
-                storyBool = false
-                isValidChoice.toggle()
-            }
-            else {
-                print("Invalid option!\nTry again!\n")
-            }
-        }
-    }
-    return storyBool
-}
-func generateStoryElements(_ piece : [String]) -> [String] {
-    return piece
-}
-struct Chapter3Part1Story {
+struct Chapter3Story {
     let intro: [String] = ["The sun hung low in the sky, casting long shadows as \(mainCharacter.name) made their way to the kingdom's headquarters, summoned by the formidable figure of King, \(mainCharacter.name)'s father. Tension hung in the air, and as \(mainCharacter.name) entered the grand chamber, they couldn't help but feel the intensity of the moment.","Seated on a grand throne, the king gazed at \(mainCharacter.name) with a mixture of concern and resolve. With a commanding voice, he declared, \(mainCharacter.name), you shall embark on a quest to slay a dangerous magic user in a nearby village.","\(mainCharacter.name)'s heart raced at the thought of this perilous task, but an undercurrent of excitement surged through them. They had never encountered a magic user before, and the prospect of such a journey filled them with a unique kind of anticipation. The king leaned forward and posed a question, \"Do you want my company on this mission? It would be our first adventure together, and I would be honored to be by your side.\"","Do you want the king to accompany you?\n1. King comes\n2. King stay"]
     let declinesKing: [String] = ["They nodded with determination, feeling a sense of responsibility to protect their father. As they and the others set out of the kingdom, villagers watched in curiosity, wondering why so many guards were leaving. Upon arriving at the village, the local leader confronted them, perplexed by the presence of guards and \(mainCharacter.name). It was only after a tense exchange that \(mainCharacter.name) explained the purpose of their visit, citing an alert about a magic user. The leader's disbelief quickly turned into hesitation, and he refused to comply with \(mainCharacter.name)'s request to gather the villagers for a magic test.","\(mainCharacter.name), taking a more serious tone, placed a hand on their sword, pushing the leader to react defensively. He unsheathed his own blade, igniting a feud between the kingdom's people and the villagers. \(mainCharacter.name), their sword in hand, lunged at the leader, meeting unexpected resistance. Yet, in the end, \(mainCharacter.name) emerged victorious.","The aftermath was grim. \(mainCharacter.name) explored the ruined village, searching for the elusive magic user until they came upon a house. Inside, a frightened boy cried for his parents' return. Y/N cautiously approached the child, their sword at the ready, but hesitated. As they stood at an impasse, a woman suddenly emerged from behind, attempting to strike \(mainCharacter.name).","Do you want to attack the women or disarm her?\n1. Attack her\n2. Disarm her"]
     let stabsMom: [String] = ["The boy's cries for his lifeless mother pierced the air, and \(mainCharacter.name) realized the tragedy they had caused before the boy's eyes. As \(mainCharacter.name) continued their quest to locate the magic user, the boy glared at them with burning rage, his innocent eyes turning into malevolent, glowing red orbs. The village was left in chaos, with casualties on both sides."]
@@ -72,8 +65,6 @@ struct Chapter3Part1Story {
     let noCrystal: [String] = ["They wept as the King, their father, passed away before their eyes. The boy, too, cried as he held his dying mother. \(mainCharacter.name) raised their sword, but the boy's gaze held them back. As \(mainCharacter.name) departed in search of the unknown magic user, the boy watched them leave, his eyes shifting from blue to an ominous red glow. The village lay in ruins, with casualties on both sides."]
     let letKingDie: [String] = ["\(mainCharacter.name) decided not to heal their father, fearing the consequences of using magic and not wanting to reveal their secrets to him. They wept as the King, their father, passed away before their eyes. The boy, too, cried as he held his dying mother. \(mainCharacter.name) raised their sword, but the boy's gaze held them back. As \(mainCharacter.name) departed in search of the unknown magic user, the boy watched them leave, his eyes shifting from blue to an ominous red glow. The village lay in ruins, with casualties on both sides."]
     let healKing: [String] = ["\(mainCharacter.name) chose to extract the crystal to heal their father. Witnessing this, the boy pleaded for his mother's life as well. Ignoring the boy's pleas, \(mainCharacter.name) carried their father out. The boy watched them leave with a mixture of anger and betrayal, his eyes shifting from blue to a malevolent red glow. The village was left in ruins, with casualties on both sides."]
-}
-struct Chapter3Part2Story {
     let kingStayedIntro: [String] = ["\(mainCharacter.name) returned to the kingdom with fewer men, the weight of their recent failure evident in the expressions of the people. The kingdom, accustomed to success, was in turmoil, and panic spread like wildfire. \(mainCharacter.name), burdened by guilt, headed to debrief the king about the ill-fated village mission. In a calculated move, they decided to withhold the truth, either not identifying the magic user or concocting a story of the magic user's elimination.","The king, suspecting the deceit but having no evidence, took a stern stance. He stripped \(mainCharacter.name) of their right to adventure and leave the castle, fearing their actions would only cause more harm."]
     let kingDiedIntro: [String] = ["\(mainCharacter.name) returned with fewer men and the kingdom in chaos. The absence of the king added to the kingdom's distress. \(mainCharacter.name), with a heavy heart, met with the tearful queen to recount the events of the village mission. Similar to the previous scenario, they chose to deceive, omitting any mention of the magic user's true identity or falsely claiming to have eliminated them.","The grieving \(mainCharacter.parentalStatus()), aware of \(mainCharacter.name)'s deception, made a tough decision. She revoked \(mainCharacter.name)'s right to adventure and leave the castle, convinced that their actions had caused enough harm, not just to the kingdom but also to her late husband."]
     let kingHealIntro: [String] = ["\(mainCharacter.name) and the king returned to the kingdom with fewer men, their arrival sparking rumors and panic. Once again, \(mainCharacter.name) and the king chose to conceal the truth, obscuring the identity of the magic user or fabricating a story about their defeat. However, something unexpected occurred.","The king, noticing the miraculous healing of \(mainCharacter.name)'s wounds, demanded an explanation. Hesitantly, \(mainCharacter.name) produced the crystal, revealing it to the king and queen. The king's reaction was immediate, and he shattered the crystal, expressing anger and reminding \(mainCharacter.name) about the dangers of magic. \(mainCharacter.name), despite the king's fury, attempted to defend the idea that magic could be harnessed for good, but the king was unyielding. He stripped \(mainCharacter.name) of the right to leave the castle. In an attempt to reconcile with the village they had ruined, the \(mainCharacter.parentalStatus()) organized a group funeral. The kingdom's populace turned out in force for the event.","Amid the ceremony, \(mainCharacter.name) felt the weight of the people's judgment. They were called a failure, a monster, and unworthy of the throne, but before they could defend themselves, the queen silenced them, asserting they had caused enough trouble. Y/N stood near the back, avoiding confrontation and reflecting on the gravity of their actions.","In the midst of the service, \(mainCharacter.name) sensed a pair of eyes fixed upon them and realized it was the lone boy from the destroyed village, his eyes glowing ominously."]
@@ -84,41 +75,41 @@ struct Chapter3Part2Story {
 }
 func chapterThree() {
     nextChapter(chNum: 3)
-    let story3p1 = Chapter3Part1Story()
-    let story3p2 = Chapter3Part2Story()
-    showStory(story3p1.intro)
-    kingStays = Choice(["1","2"])
+    let story = Chapter3Story()
+    showStory(story.intro)
+    kingStays = userDecision(choices: ["1","2"])
     if kingStays{
-        showStory(story3p1.acceptsKing)
+        showStory(story.acceptsKing)
         if exploreUpstairs{
             kingHealed = Choice("Do you want to heal the king?\n1. Heal the King\n2. Let the King die", ["1","2"])
             if kingHealed{
-                showStory(story3p1.healKing)
-                showStory(story3p2.kingHealIntro)
+                showStory(story.healKing)
+                showStory(story.kingHealIntro)
             } else {
-                showStory(story3p1.letKingDie)
+                showStory(story.letKingDie)
                 kingDead = true
-                showStory(story3p2.kingDiedIntro)
+                showStory(story.kingDiedIntro)
             }
         } else {
-            showStory(story3p1.noCrystal)
+            showStory(story.noCrystal)
             kingDead = true
-            showStory(story3p2.kingDiedIntro)
+            showStory(story.kingDiedIntro)
         }
     } else {
-        showStory(story3p1.declinesKing)
-        momAlive = Choice(["1","2"])
+        showStory(story.declinesKing)
+        momAlive = userDecision(choices: ["1","2"])
         if momAlive{
-            showStory(story3p1.knocksOutMom)
+            showStory(story.knocksOutMom)
         } else {
-            showStory(story3p1.stabsMom)
+            showStory(story.stabsMom)
         }
-        showStory(story3p2.kingStayedIntro)
+        showStory(story.kingStayedIntro)
     }
     chaseBoy = Choice("Do you want to chase the boy?\n1. Chase the boy\n2. Stand still", ["1","2"])
     if chaseBoy{
-        showStory(story3p2.chaseBoy)
+        showStory(story.chaseBoy)
     } else {
-        showStory(story3p2.letBoyGo)
+        showStory(story.letBoyGo)
     }
 }
+
